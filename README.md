@@ -37,3 +37,7 @@ http://localhost:3000/api
 ```
 
 # Production notes:
+
+1. The api was deployed on Heroku: <https://teslo-nest-do.herokuapp.com/>
+
+2. The websocket client was deployed on Netlify: <https://we-nest-do.netlify.app/>
