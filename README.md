@@ -35,3 +35,5 @@ http://localhost:3000/api/seed
 ```
 http://localhost:3000/api
 ```
+
+# Production notes:
