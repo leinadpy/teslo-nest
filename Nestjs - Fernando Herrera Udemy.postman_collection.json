@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "e5a39b9e-68da-4fca-a007-68ccfde229df",
+		"name": "Nestjs - Fernando Herrera Udemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12256172"
+	},
+	"item": [
+		{
+			"name": "teslo-shop",
+			"item": [
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Create Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{USER}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Daniel's shirt51\",\r\n    \"sizes\": [\r\n        \"SM\",\r\n        \"M\",\r\n        \"L\"\r\n    ],\r\n    \"gender\": \"men\",\r\n    \"price\": 151.99,\r\n    \"tags\": [\"shirt\", \"shirt2\", \"shirt3\"],\r\n    \"images\": [\r\n        \"http://images1.jpg\",\r\n        \"http://images2.jpg\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{HOST}}/api/products",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Daniel's shirt50\",\r\n    \"slug\": \"daniels_shirt2 50\",\r\n    \"sizes\": [\r\n        \"SM\",\r\n        \"M\",\r\n        \"L\"\r\n    ],\r\n    \"gender\": \"men\",\r\n    \"price\": 151.99,\r\n    \"images\": [\r\n        \"https://image1.jpg\",\r\n        \"https://image2.jpg\",\r\n        \"https://image3.jpg\"\r\n    ],\r\n    \"tags\": [\"shirt\", \"shirt2\", \"shirt3\"]\r\n}"
+								},
+								"url": {
+									"raw": "{{HOST}}/api/products/793cbc71-0354-4325-ab14-925b3c174e93",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"793cbc71-0354-4325-ab14-925b3c174e93"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/products",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find One Product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/products/daniels_shirt51",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"daniels_shirt51"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete One Product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/products/557f8742-c6aa-4fac-b36f-06945f3afe40",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"557f8742-c6aa-4fac-b36f-06945f3afe40"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/leina/Pictures/56439345.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{HOST}}/api/files/product",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product's Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/files/product/1473809-00-A_1_2000.jpg",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"product",
+										"1473809-00-A_1_2000.jpg"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{USER}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"thania@gmail.com\",\r\n    \"password\": \"Abc123\",\r\n    \"fullName\": \"Thania Admin Riquelme\"\r\n}"
+								},
+								"url": {
+									"raw": "{{HOST}}/api/auth/register",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test1@google.com\",\r\n    \"password\": \"Abc123\"\r\n}"
+								},
+								"url": {
+									"raw": "{{HOST}}/api/auth/login",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Private",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{USER}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/auth/private",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"private"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Private 2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{USER}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/auth/private2",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"private2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Private 3",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{USER}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/auth/private3",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"private3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check Status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{USER}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/auth/check-status",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"check-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Host",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/seed",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
